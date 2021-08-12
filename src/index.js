@@ -1,3 +1,4 @@
+import { addNewComment } from './listener';
 import './style.css';
 
 // function openForm() {
@@ -95,6 +96,10 @@ formContainer.appendChild(breakLine1);
 
 const root = document.getElementById('root');
 root.appendChild(formContainer);
+
+const addCommentBtn = document.querySelector('#addComment .submit-button');
+
+commentForm.addEventListener('submit', addNewComment)
 
 // btnComment.addEventListener('click', (e) => {
 //   e.preventDefault();
