@@ -1,6 +1,5 @@
 import './style.css';
 
-
 // function openForm() {
 //   document.getElementById("popupComment").style.display = "block";
 // }
@@ -9,7 +8,6 @@ import './style.css';
 //   popupComment.style.display = 'none';
 //   overlay.classList.remove('active');
 // });
-
 
 const elementGenerator = (typeName, className) => {
   const element = document.createElement(typeName);
@@ -36,13 +34,13 @@ const mealList = elementGenerator('ul', 'd-flex list-unstyled');
 const listContainer1 = elementGenerator('div', 'row');
 const listItem1 = elementGenerator('li');
 listItem1.textContent = 'fuel: Titanium';
-const listItem2 = elementGenerator('li')
+const listItem2 = elementGenerator('li');
 listItem2.textContent = 'fuel: Titanium';
 
 const listContainer2 = elementGenerator('div', 'row');
 const listItem3 = elementGenerator('li');
 listItem3.textContent = 'fuel: Beans';
-const listItem4 = elementGenerator('li')
+const listItem4 = elementGenerator('li');
 listItem4.textContent = 'fuel: beans';
 
 const commentCounter = elementGenerator('h4', 'my-3 comment-count');
@@ -52,7 +50,6 @@ spanCounter.id = 'c-count';
 
 const commentDisplay = elementGenerator('div');
 commentDisplay.id = 'comments-display';
-
 
 const addComment = elementGenerator('h4', 'mb-3 text');
 addComment.textContent = 'Add a Comment';
@@ -73,9 +70,6 @@ input2.min = '0';
 const commentButton = elementGenerator('button', 'btn btn-info submit-button action-button ml-0');
 commentButton.type = 'submit';
 commentButton.textContent = 'Comment';
-
-
-
 
 commentCounter.appendChild(spanCounter);
 commentForm.appendChild(input1);
@@ -99,12 +93,8 @@ formContainer.appendChild(addComment);
 formContainer.appendChild(commentForm);
 formContainer.appendChild(breakLine1);
 
-
 const root = document.getElementById('root');
 root.appendChild(formContainer);
-console.log(root);
-
-
 
 // btnComment.addEventListener('click', (e) => {
 //   e.preventDefault();
