@@ -1,5 +1,6 @@
 import './style.css';
 import icon from './icon.svg';
+import { getLikes, postLikes } from './involvement';
 
 const elementGenerator = (typeName, className) => {
   const element = document.createElement(typeName);
@@ -15,7 +16,7 @@ const listOne = elementGenerator('li', 'spaceship');
 const linkOne = elementGenerator('a');
 linkOne.href = '#';
 
-function mealCounter() {
+async function mealCounter() {
   fetch('https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood')
     .then((response) => response.json())
     .then((data) => {
@@ -57,17 +58,45 @@ fetch('https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood')
       const picture = elementGenerator('img', 'image');
       picture.src = data.meals[index].strMealThumb;
       picture.alt = 'space-image';
+      meal.id = data.meals[index].idMeal;
 
       const likes = elementGenerator('div', 'likes');
       const paragraph = elementGenerator('p');
+      paragraph.classList.add('width', 'font-size');
       paragraph.textContent = data.meals[index].strMeal;
 
       const likeCounter = elementGenerator('div', 'like-counter');
       const heart = elementGenerator('img');
       heart.src = icon;
       heart.alt = 'heart-image';
+
       const like = elementGenerator('p');
-      like.textContent = 'like';
+      like.classList.add('small');
+      like.textContent = ' 0 likes';
+
+      heart.addEventListener('click', async (e, result) => {
+        e.preventDefault();
+        postLikes(
+          'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/FnxK1bSt3uMGTDmpjc4x/likes/',
+          {
+            item_id: meal.id,
+          },
+        );
+        result = getLikes(
+          'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/FnxK1bSt3uMGTDmpjc4x/likes/',
+        );
+        result.then((data) => {
+          like.textContent = `${data[index].likes} likes`;
+        });
+      });
+
+      const likes1 = getLikes(
+        'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/FnxK1bSt3uMGTDmpjc4x/likes/',
+      );
+
+      likes1.then((data) => {
+        like.textContent = `${data[index].likes} likes`;
+      });
 
       likeCounter.appendChild(heart);
       likeCounter.appendChild(like);
@@ -76,7 +105,8 @@ fetch('https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood')
       likes.appendChild(likeCounter);
 
       const comments = elementGenerator('button');
-      comments.textContent = 'comments';
+      comments.textContent = 'Comments';
+      comments.classList.add('font-size');
 
       meal.appendChild(picture);
       meal.appendChild(likes);

@@ -6,6 +6,7 @@
 
 body {
   font-size: large;
+  font-family: "Poppins", sans-serif;
 }
 
 header {
@@ -98,4 +99,20 @@ footer {
   width: 100vw;
   background-color: #fff;
   margin-top: 100px;
+}
+
+.font-size {
+  font-size: 16px;
+}
+
+.small {
+  font-size: 15px;
+}
+
+.like-counter {
+  text-align: center;
+}
+
+.width {
+  width: 71%;
 }
