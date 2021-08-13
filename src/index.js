@@ -20,7 +20,6 @@ async function mealCounter() {
   fetch('https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood')
     .then((response) => response.json())
     .then((data) => {
-      console.log(data)
       linkOne.textContent = `Seafood(${data.meals.length})`;
     });
 }
@@ -82,13 +81,11 @@ fetch('https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood')
           {
             item_id: meal.id,
           },
-          console.log(meal.id)
-        )
+        );
         result = getLikes(
           'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/RgdNHGPFaR65qDly8eoG/likes/',
         );
         result.then((data) => {
-          console.log(data)
           like.textContent = `${data[index].likes} likes`;
         });
       });
