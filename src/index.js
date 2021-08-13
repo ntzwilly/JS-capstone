@@ -1,5 +1,6 @@
 import './style.css';
 import icon from './icon.svg';
+import logoImage from './logo.png' ;
 import { getLikes, postLikes } from './involvement';
 
 const elementGenerator = (typeName, className) => {
@@ -8,8 +9,8 @@ const elementGenerator = (typeName, className) => {
   return element;
 };
 const header = elementGenerator('header');
-const logo = elementGenerator('div', 'logo');
-logo.textContent = 'Seafood logo';
+const logo = elementGenerator('img', 'logo');
+logo.src = logoImage;
 const navigation = elementGenerator('nav');
 const uList = elementGenerator('ul');
 const listOne = elementGenerator('li', 'spaceship');
@@ -29,12 +30,12 @@ mealCounter();
 const listTwo = elementGenerator('li');
 const linkTwo = elementGenerator('a');
 linkTwo.href = '#';
-linkTwo.textContent = 'Planets';
+linkTwo.textContent = 'About';
 
 const listThree = elementGenerator('li');
 const linkThree = elementGenerator('a');
 linkThree.href = '#';
-linkThree.textContent = 'Races';
+linkThree.textContent = 'Contact';
 
 listOne.appendChild(linkOne);
 listTwo.appendChild(linkTwo);
@@ -61,12 +62,12 @@ fetch('https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood')
       meal.id = data.meals[index].idMeal;
 
       const likes = elementGenerator('div', 'likes');
-      const paragraph = elementGenerator('p');
+      const paragraph = elementGenerator('p', 'justify');
       paragraph.classList.add('width', 'font-size');
       paragraph.textContent = data.meals[index].strMeal;
 
       const likeCounter = elementGenerator('div', 'like-counter');
-      const heart = elementGenerator('img');
+      const heart = elementGenerator('img', 'main-color');
       heart.src = icon;
       heart.alt = 'heart-image';
 

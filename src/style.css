@@ -7,6 +7,7 @@
 body {
   font-size: large;
   font-family: "Poppins", sans-serif;
+  color: rgb(59, 91, 93);
 }
 
 header {
@@ -22,9 +23,8 @@ header {
 }
 
 .logo {
-  border: 2px solid #000;
-  height: 80px;
-  width: 80px;
+  height: 90px;
+  width: 90px;
   display: flex;
   align-items: center;
   text-align: center;
@@ -42,8 +42,8 @@ nav ul li {
 }
 
 nav ul li a {
-  color: #000;
   text-decoration: none;
+  color: rgb(59, 91, 93);
 }
 
 .spaceship {
@@ -84,8 +84,8 @@ button {
   margin-bottom: 30px;
   padding: 10px 10px;
   background-color: #fff;
-  border: 2px solid black;
-  box-shadow: 5px 5px 2px 1px black;
+  border: 2px solid rgb(59, 91, 93);
+  box-shadow: 5px 5px 2px 1px rgb(59, 91, 93);
   font-size: 0.8em;
   cursor: pointer;
   align-self: center;
@@ -115,4 +115,8 @@ footer {
 
 .width {
   width: 71%;
+}
+
+.main-color {
+  color: red;
 }
