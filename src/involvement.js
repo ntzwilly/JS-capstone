@@ -5,8 +5,7 @@ export async function postLikes(url = '', data = {}) {
     cache: 'no-cache',
     credentials: 'same-origin',
     headers: {
-      'Content-Type': 'application/json',
-      Accept: 'application/json',
+      'Content-Type': 'application/json; charset=UTF-8',
     },
     redirect: 'follow',
     referrerPolicy: 'no-referrer',
@@ -22,7 +21,7 @@ export async function getLikes(url = '') {
     cache: 'no-cache',
     credentials: 'same-origin',
     headers: {
-      'Content-Type': 'application/json',
+      'Content-Type': 'application/json; charset=UTF-8',
       Accept: 'application/json',
     },
   });
