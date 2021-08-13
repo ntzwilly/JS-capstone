@@ -2,9 +2,9 @@
  * @jest-environment jsdom
  */
 
-const mealsMock = require("./mockMealCounter");
+const mealsMock = require('../__mocks__/mockMealCounter');
 
-test("should count the number of meals", async() => {
+test('Should count the number of meals', async () => {
   const meals = await mealsMock();
   const count = meals.length;
 
