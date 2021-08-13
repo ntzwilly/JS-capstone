@@ -13,7 +13,7 @@ import icon from './icon.svg';
 import { getLikes, postLikes } from './involvement';
 import { getComments, getMeal } from './api';
 import { displayComments } from './comments';
-import { displayMeal } from './utils';
+import { displayMeal, hideModal, displayModal } from './utils';
 
 const elementGenerator = (typeName, className) => {
   const element = document.createElement(typeName);
@@ -29,7 +29,8 @@ const img = elementGenerator('img');
 img.src = 'https://image.winudf.com/v2/image/b3JnLnBlcnNvbmFsLmdhbGF4eXNwYWNlbGl2ZXdhbGxwYXBlcjJfc2NyZWVuXzBfMTUzMTg5OTg0OV8wODY/screen-0.jpg?fakeurl=1&type=.jpg';
 img.alt = 'space-img';
 img.id = 'figure';
-const faTimes = elementGenerator('i', 'fas fa-times ml-5');
+const faTimes = elementGenerator('i', 'fas fa-times ml-5 close-modal');
+faTimes.addEventListener('click', hideModal);
 
 const mealName = elementGenerator('h1', 'mt-3');
 mealName.id = 'title';
@@ -237,6 +238,7 @@ fetch('https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood')
         displayComments(comments);
         const mealInfo = await getMeal(id);
         displayMeal(mealInfo);
+        displayModal();
         console.log(mealInfo);
       });
 

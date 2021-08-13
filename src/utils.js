@@ -1,5 +1,4 @@
 const getCommentsCount = (comments) => comments.length || 0;
-const modalForm = document.querySelector('#popupComment');
 
 export const displayMeal = (mealInfo) => {
   console.log(mealInfo, 'meals to display');
@@ -10,13 +9,17 @@ export const displayMeal = (mealInfo) => {
   formContainer.querySelector('img').src = mealInfo.strMealThumb;
   ingredients.forEach((ing, index) => {
     const li = document.createElement('li');
-    li.innerHTML = `${mealInfo[ing]}: ${mealInfo[measures[index + 1]]}`;
+    li.innerHTML = `${mealInfo[ing]}: ${mealInfo[measures[index]]}`;
     ul.appendChild(li);
   });
 };
 
 export const displayModal = () => {
-    modalForm.styles.display = "Block";
-}
+  document.querySelector('#popupComment').style.display = 'flex';
+};
+
+export const hideModal = () => {
+  document.querySelector('#popupComment').style.display = 'none';
+};
 
 export default getCommentsCount;
