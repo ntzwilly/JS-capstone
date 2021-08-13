@@ -16,7 +16,7 @@ const getComments = async (itemId) => {
   const response = await fetch(`${USER_DATA_API}?item_id=${itemId}`);
   try {
     const comments = await response.json();
-    return comments.slice(-2);
+    return comments.slice(-5);
   } catch (error) {
     return [];
   }

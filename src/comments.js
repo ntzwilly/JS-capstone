@@ -1,4 +1,3 @@
-import { getComments } from './api';
 import getCommentsCount from './utils';
 
 export const displayComments = (items) => {
@@ -9,4 +8,8 @@ export const displayComments = (items) => {
   });
 };
 
-export default displayComments;
+export const addComment = (name, comment) => {
+  const commentsDiv = document.querySelector('#comments-display');
+  const newDate = new Date().toLocaleDateString();
+  commentsDiv.innerHTML += `${newDate} ${name}: ${comment}`;
+};
