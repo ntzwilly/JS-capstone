@@ -9,11 +9,10 @@ import './style.css';
 //   popupComment.style.display = 'none';
 //   overlay.classList.remove('active');
 // });
-import './style.css';
 import icon from './icon.svg';
 import { getLikes, postLikes } from './involvement';
 import { getComments, getMeal } from './api';
-import displayComments from './comments';
+import { displayComments } from './comments';
 import { displayMeal } from './utils';
 
 const elementGenerator = (typeName, className) => {
@@ -38,20 +37,20 @@ const mealDescription = elementGenerator('p');
 mealDescription.id = 'description';
 
 const mealList = elementGenerator('ul', 'd-flex list-unstyled');
-const listContainer1 = elementGenerator('div', 'row');
-const listItem1 = elementGenerator('li');
-listItem1.textContent = 'fuel: Titanium';
-const listItem2 = elementGenerator('li');
-listItem2.textContent = 'fuel: Titanium';
+// const listContainer1 = elementGenerator('div', 'row');
+// const listItem1 = elementGenerator('li');
+// listItem1.textContent = 'fuel: Titanium';
+// const listItem2 = elementGenerator('li');
+// listItem2.textContent = 'fuel: Titanium';
 
-const listContainer2 = elementGenerator('div', 'row');
-const listItem3 = elementGenerator('li');
-listItem3.textContent = 'fuel: Beans';
-const listItem4 = elementGenerator('li');
-listItem4.textContent = 'fuel: beans';
+// const listContainer2 = elementGenerator('div', 'row');
+// const listItem3 = elementGenerator('li');
+// listItem3.textContent = 'fuel: Beans';
+// const listItem4 = elementGenerator('li');
+// listItem4.textContent = 'fuel: beans';
 
 const commentCounter = elementGenerator('h4', 'my-3 comment-count');
-commentCounter.textContent = 'Comments';
+commentCounter.textContent = 'Comments: ';
 const spanCounter = elementGenerator('span');
 spanCounter.id = 'c-count';
 
@@ -82,12 +81,12 @@ commentCounter.appendChild(spanCounter);
 commentForm.appendChild(input1);
 commentForm.appendChild(input2);
 commentForm.appendChild(commentButton);
-listContainer1.appendChild(listItem1);
-listContainer1.appendChild(listItem2);
-mealList.appendChild(listContainer1);
-listContainer2.appendChild(listItem3);
-listContainer2.appendChild(listItem4);
-mealList.appendChild(listContainer2);
+// listContainer1.appendChild(listItem1);
+// listContainer1.appendChild(listItem2);
+// mealList.appendChild(listContainer1);
+// listContainer2.appendChild(listItem3);
+// listContainer2.appendChild(listItem4);
+// mealList.appendChild(listContainer2);
 imgDiv.appendChild(img);
 imgDiv.appendChild(faTimes);
 formContainer.appendChild(imgDiv);
@@ -103,9 +102,7 @@ formContainer.appendChild(breakLine1);
 const root = document.getElementById('root');
 root.appendChild(formContainer);
 
-const addCommentBtn = document.querySelector('#addComment .submit-button');
-
-commentForm.addEventListener('submit', addNewComment)
+commentForm.addEventListener('submit', addNewComment);
 
 // btnComment.addEventListener('click', (e) => {
 //   e.preventDefault();
@@ -174,12 +171,12 @@ header.appendChild(navigation);
 
 const main = elementGenerator('main');
 
-fetch('https://www.themealdb.com/api/json/v1/1/lookup.php?c=Seafood')
+fetch('https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood')
   .then((response) => response.json())
   .then((data) => {
     data.meals.forEach((meal, index) => {
-      const info = {...meal};
-      console.log(info)
+      // const info = {...meal};
+      // console.log(info)
       meal = elementGenerator('section');
       const picture = elementGenerator('img', 'image');
       picture.src = data.meals[index].strMealThumb;
@@ -234,12 +231,13 @@ fetch('https://www.themealdb.com/api/json/v1/1/lookup.php?c=Seafood')
       comments.textContent = 'Comments';
       comments.classList.add('font-size');
       comments.addEventListener('click', async (e) => {
-        const id = e.target.parentElement.id;
+        const { id } = e.target.parentElement;
         document.querySelector('#addComment').setAttribute('data-index', id);
         const comments = await getComments(id);
+        displayComments(comments);
         const mealInfo = await getMeal(id);
-        // displayMeal(mealIn
-        console.log(mealInfo)
+        displayMeal(mealInfo);
+        console.log(mealInfo);
       });
 
       meal.appendChild(picture);
@@ -248,7 +246,8 @@ fetch('https://www.themealdb.com/api/json/v1/1/lookup.php?c=Seafood')
 
       main.appendChild(meal);
     });
-  });
+  })
+  .catch((e) => console.log(e));
 
 const footer = elementGenerator('footer');
 footer.textContent = 'Created By Ade & Willy under CC licence';

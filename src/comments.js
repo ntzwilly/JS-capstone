@@ -1,8 +1,7 @@
 import { getComments } from './api';
 import getCommentsCount from './utils';
 
-const displayComments =  (items) => {
-
+export const displayComments = (items) => {
   document.getElementById('comments-display').innerHTML = '';
   document.getElementById('c-count').innerHTML = getCommentsCount(items);
   items.forEach((element) => {

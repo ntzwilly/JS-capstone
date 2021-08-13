@@ -1,5 +1,3 @@
-import { ContextExclusionPlugin } from "webpack";
-
 const USER_DATA_API = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/FnxK1bSt3uMGTDmpjc4x/comments';
 // const MY_APP_ID = '';
 const postData = async (url) => {
@@ -25,13 +23,12 @@ const getComments = async (itemId) => {
 };
 
 export const getMeal = async (mealId) => {
-  console.log(mealId)
   try {
-    const response = await fetch(`www.themealdb.com/api/json/v1/1/lookup.php?i=${mealId}`);
+    const response = await fetch(`https://themealdb.com/api/json/v1/1/lookup.php?i=${mealId}`);
     const { meals } = await response.json();
     return meals[0];
   } catch (error) {
-    console.log(error)
+    console.log(error, 'Get Meal')
     return [];
   }
 };
