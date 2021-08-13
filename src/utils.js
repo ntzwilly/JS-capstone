@@ -7,6 +7,8 @@ export const displayMeal = (mealInfo) => {
   const formContainer = document.querySelector('#popupComment');
   const ul = formContainer.querySelector('ul');
   formContainer.querySelector('img').src = mealInfo.strMealThumb;
+  formContainer.querySelector('#title').innerHTML = mealInfo.strMeal;
+  formContainer.querySelector('#description').innerHTML = mealInfo.strInstructions;
   ingredients.forEach((ing, index) => {
     const li = document.createElement('li');
     li.innerHTML = `${mealInfo[ing]}: ${mealInfo[measures[index]]}`;

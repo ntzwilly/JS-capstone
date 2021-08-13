@@ -9,16 +9,17 @@ img {
 
 .formContainer {
   position: fixed;
-  width: 100%;
+  width: 500px;
   height: 100%;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   margin: auto;
   padding: 20px;
-  background-color: bisque;
+  background-color: rgb(231, 216, 216);
   z-index: 999;
   display: none;
+  align-items: center;
 }
 
 * {
@@ -41,7 +42,7 @@ header {
   position: fixed;
   top: 0;
   margin-bottom: 50px;
-  background-color: #fff;
+  background-color: rgb(231, 216, 216);
 }
 
 ul {
@@ -55,12 +56,13 @@ ul {
 li {
   width: 50%;
   text-transform: capitalize;
+  font-size: 13px;
 }
 
 .formContainer img {
   object-fit: cover;
-  width: 400px;
-  height: 400px;
+  width: 150px;
+  height: 150px;
 }
 
 .formContainer div:first-child {
@@ -103,6 +105,11 @@ nav ul li a {
   text-decoration: none;
 }
 
+h1,
+h4 {
+  font-size: 1rem;
+}
+
 .spaceship {
   text-decoration: underline;
   font-weight: bold;
@@ -136,11 +143,26 @@ section {
   padding: 20px 10px;
 }
 
+.descriptionText {
+  max-height: 50px;
+  overflow: hidden;
+  padding-bottom: 60px;
+  font-size: 15px;
+}
+
+.c-display {
+  font-size: 15px;
+}
+
+.submit-button {
+  margin-left: 0;
+}
+
 button {
   margin-left: 20px;
   margin-bottom: 30px;
   padding: 10px 10px;
-  background-color: #fff;
+  background-color: rgb(231, 216, 216);
   border: 2px solid black;
   box-shadow: 5px 5px 2px 1px black;
   font-size: 0.8em;
@@ -154,7 +176,7 @@ footer {
   position: fixed;
   bottom: 0;
   width: 100vw;
-  background-color: #fff;
+  background-color: rgb(231, 216, 216);
   margin-top: 100px;
 }
 
@@ -176,7 +198,7 @@ footer {
 
 .formContainer input[type=text] {
   width: 100%;
-  padding: 10px;
+  padding: 8px;
   border: none;
   background: #eee;
 }

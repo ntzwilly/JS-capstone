@@ -1,5 +1,4 @@
 const USER_DATA_API = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/FnxK1bSt3uMGTDmpjc4x/comments';
-// const MY_APP_ID = '';
 const postData = async (url) => {
   const response = await fetch(`${USER_DATA_API}${url}`, {
     method: 'POST',

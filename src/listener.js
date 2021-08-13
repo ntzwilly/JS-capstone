@@ -1,7 +1,6 @@
 import { postComment } from './api';
 import { addComment } from './comments';
 
-// eslint-disable-next-line import/prefer-default-export
 export const addNewComment = (e) => {
   e.preventDefault();
   return (async () => {
