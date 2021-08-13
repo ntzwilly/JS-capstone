@@ -12,6 +12,9 @@ import './style.css';
 import './style.css';
 import icon from './icon.svg';
 import { getLikes, postLikes } from './involvement';
+import { getComments, getMeal } from './api';
+import displayComments from './comments';
+import { displayMeal } from './utils';
 
 const elementGenerator = (typeName, className) => {
   const element = document.createElement(typeName);
@@ -171,10 +174,12 @@ header.appendChild(navigation);
 
 const main = elementGenerator('main');
 
-fetch('https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood')
+fetch('https://www.themealdb.com/api/json/v1/1/lookup.php?c=Seafood')
   .then((response) => response.json())
   .then((data) => {
     data.meals.forEach((meal, index) => {
+      const info = {...meal};
+      console.log(info)
       meal = elementGenerator('section');
       const picture = elementGenerator('img', 'image');
       picture.src = data.meals[index].strMealThumb;
@@ -228,6 +233,14 @@ fetch('https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood')
       const comments = elementGenerator('button');
       comments.textContent = 'Comments';
       comments.classList.add('font-size');
+      comments.addEventListener('click', async (e) => {
+        const id = e.target.parentElement.id;
+        document.querySelector('#addComment').setAttribute('data-index', id);
+        const comments = await getComments(id);
+        const mealInfo = await getMeal(id);
+        // displayMeal(mealIn
+        console.log(mealInfo)
+      });
 
       meal.appendChild(picture);
       meal.appendChild(likes);
@@ -239,8 +252,6 @@ fetch('https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood')
 
 const footer = elementGenerator('footer');
 footer.textContent = 'Created By Ade & Willy under CC licence';
-
-const root = document.getElementById('root');
 
 root.appendChild(header);
 root.appendChild(main);
