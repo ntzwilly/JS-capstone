@@ -153,13 +153,12 @@ fetch('https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood')
             item_id: meal.id,
           },
         );
-        result = getLikes(
-          'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/RgdNHGPFaR65qDly8eoG/likes/',
-        );
-        result.then((data) => {
-          like.textContent = `${data[index].likes} likes`;
-        });
+
+        const prevLikes = like.textContent.split(' ')[0];
+        like.innerHTML = `${parseInt(prevLikes, 10) + 1} likes`;
       });
+
+      
 
       const likes1 = getLikes(
         'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/RgdNHGPFaR65qDly8eoG/likes/',

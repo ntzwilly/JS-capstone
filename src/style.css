@@ -216,3 +216,7 @@ footer {
 .nav-font-size {
   font-size: 18px;
 }
+
+.card {
+  overflow-y: auto;
+}
