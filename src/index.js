@@ -1,6 +1,6 @@
 import './style.css';
 import icon from './icon.svg';
-import logoImage from './logo.png' ;
+import logoImage from './logo.png';
 import { getLikes, postLikes } from './involvement';
 
 const elementGenerator = (typeName, className) => {
