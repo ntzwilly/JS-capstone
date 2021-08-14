@@ -4,6 +4,7 @@
     "description": "",
     "private": true,
     "scripts": {
+        "type": "module",
         "test": "jest",
         "start": "webpack serve --open",
         "build": "webpack --mode production",

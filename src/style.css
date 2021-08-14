@@ -31,6 +31,8 @@ img {
 body {
   font-size: large;
   font-family: "Poppins", sans-serif;
+  background-color: rgb(231, 216, 216);
+  color: rgb(59, 91, 93);
 }
 
 header {
@@ -101,13 +103,14 @@ nav ul li {
 }
 
 nav ul li a {
-  color: #000;
+  color: rgb(59, 91, 93);
   text-decoration: none;
 }
 
 h1,
 h4 {
   font-size: 1rem;
+  color: rgb(59, 91, 93);
 }
 
 .spaceship {
@@ -121,6 +124,7 @@ main {
   grid-template-rows: 1fr 1fr;
   margin-top: 150px;
   margin-bottom: 60px;
+  background-color: rgb(231, 216, 216);
 }
 
 .image {
@@ -163,16 +167,17 @@ button {
   margin-bottom: 30px;
   padding: 10px 10px;
   background-color: rgb(231, 216, 216);
-  border: 2px solid black;
-  box-shadow: 5px 5px 2px 1px black;
+  border: 2px solid rgb(59, 91, 93);
+  box-shadow: 5px 5px 2px 1px rgb(59, 91, 93);
   font-size: 0.8em;
   cursor: pointer;
   align-self: center;
+  color: rgb(59, 91, 93);
 }
 
 footer {
   padding: 20px 100px;
-  border-top: 2px solid black;
+  border-top: 2px solid rgb(59, 91, 93);
   position: fixed;
   bottom: 0;
   width: 100vw;
