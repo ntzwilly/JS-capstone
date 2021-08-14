@@ -7,7 +7,6 @@ const mealsMock = () => {
     }),
   );
   return result;
- };
-  
- module.exports = mealsMock;
- 
+};
+
+module.exports = mealsMock;
