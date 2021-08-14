@@ -1,8 +1,8 @@
 import getCommentsCount from './utils';
 
 export const displayComments = (items = []) => {
-  document.getElementById('comments-display').innerHTML = '';
-  document.getElementById('c-count').innerHTML = getCommentsCount(items);
+  document.querySelector('#comments-display').innerHTML = '';
+  document.querySelector('#c-count').innerHTML = getCommentsCount(items);
   items.forEach((element) => {
     document.querySelector('#comments-display').innerHTML += `${element.creation_date} ${element.username}: ${element.comment}</br>`;
   });

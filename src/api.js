@@ -4,7 +4,10 @@ const getComments = async (itemId) => {
   const response = await fetch(`${USER_DATA_API}?item_id=${itemId}`);
   try {
     const comments = await response.json();
-    return comments;
+    if (Array.isArray(comments)) {
+      return comments;
+    }
+    return [];
   } catch (error) {
     return [];
   }
