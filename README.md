@@ -37,6 +37,10 @@ To get a local copy up and running follow these simple example steps.
 
     npm start
 
+## Video
+
+ [@Video Link](https://youtu.be/u0VUvXMMGrE)
+
 ## Authors
 
 👤 **Ntazama Willy**
