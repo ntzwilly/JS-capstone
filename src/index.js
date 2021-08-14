@@ -1,4 +1,4 @@
-import { addNewComment } from './listener';
+import addNewComment from './listener';
 import './style.css';
 import icon from './icon.svg';
 import { getLikes, postLikes } from './involvement';
@@ -124,7 +124,6 @@ fetch('https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood')
   .then((response) => response.json())
   .then((data) => {
     data.meals.forEach((meal, index) => {
-
       meal = elementGenerator('section');
       const picture = elementGenerator('img', 'image');
       picture.src = data.meals[index].strMealThumb;
@@ -186,7 +185,6 @@ fetch('https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood')
         const mealInfo = await getMeal(id);
         displayMeal(mealInfo);
         displayModal();
-        console.log(mealInfo);
       });
 
       meal.appendChild(picture);
@@ -195,8 +193,7 @@ fetch('https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood')
 
       main.appendChild(meal);
     });
-  })
-  .catch((e) => console.log(e));
+  });
 
 const footer = elementGenerator('footer');
 footer.textContent = 'Created By Ade & Willy under CC licence';

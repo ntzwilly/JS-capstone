@@ -1,7 +1,7 @@
 import { postComment } from './api';
 import { addComment } from './comments';
 
-export const addNewComment = (e) => {
+const addNewComment = (e) => {
   e.preventDefault();
   return (async () => {
     try {
@@ -10,7 +10,7 @@ export const addNewComment = (e) => {
       const name = nameInput.value;
       const insight = insightInput.value;
       if (!name || !insight) {
-        return alert('Name and Comment are required');
+        return false;
       }
       const data = {
         username: name,
@@ -18,10 +18,12 @@ export const addNewComment = (e) => {
         item_id: itemId,
       };
       await postComment(data);
+      nameInput.value = '';
+      insightInput.value = '';
       return addComment(name, insight);
     } catch (error) {
-      console.log('Error', error);
       return false;
     }
   })();
 };
+export default addNewComment;

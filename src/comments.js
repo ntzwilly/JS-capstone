@@ -11,5 +11,8 @@ export const displayComments = (items) => {
 export const addComment = (name, comment) => {
   const commentsDiv = document.querySelector('#comments-display');
   const newDate = new Date().toLocaleDateString();
-  commentsDiv.innerHTML += `${newDate} ${name}: ${comment}`;
+  const oldComments = commentsDiv.innerHTML.split('<br>');
+  let newComments = `${oldComments[1]} <br>`;
+  newComments += `${newDate} ${name}: ${comment}`;
+  commentsDiv.innerHTML = newComments;
 };
