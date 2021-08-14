@@ -1,4 +1,10 @@
-const getCommentsCount = (comments) => comments.length || 0;
+const getCommentsCount = (arr) => {
+  let count = 0;
+  for (let i = 0; i < arr.length; i += 1) {
+    count += 1;
+  }
+  return count;
+};
 
 export const displayMeal = (mealInfo) => {
   const ingredients = ['strIngredient1', 'strIngredient2', 'strIngredient3', 'strIngredient4'];

@@ -18,6 +18,7 @@ const addNewComment = (e) => {
         item_id: itemId,
       };
       await postComment(data);
+
       nameInput.value = '';
       insightInput.value = '';
       return addComment(name, insight);

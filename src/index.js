@@ -13,7 +13,10 @@ const elementGenerator = (typeName, className) => {
   return element;
 };
 
-const formContainer = elementGenerator('div', 'card align-items-center formContainer');
+const formContainer = elementGenerator(
+  'div',
+  'card align-items-center formContainer',
+);
 formContainer.id = 'popupComment';
 
 const imgDiv = elementGenerator('div', 'd-flex');
@@ -54,7 +57,10 @@ input2.id = 'comment-input';
 input2.placeholder = 'your insights';
 input2.type = 'text';
 input2.min = '0';
-const commentButton = elementGenerator('button', 'btn btn-info submit-button action-button');
+const commentButton = elementGenerator(
+  'button',
+  'btn btn-info submit-button action-button',
+);
 commentButton.type = 'submit';
 commentButton.textContent = 'Comment';
 
@@ -87,13 +93,13 @@ const listOne = elementGenerator('li', 'spaceship');
 const linkOne = elementGenerator('a');
 linkOne.href = '#';
 
-async function mealCounter() {
+const mealCounter = () => {
   fetch('https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood')
     .then((response) => response.json())
     .then((data) => {
       linkOne.textContent = `Seafood(${data.meals.length})`;
     });
-}
+};
 
 mealCounter();
 
@@ -145,7 +151,7 @@ fetch('https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood')
       like.classList.add('small');
       like.textContent = ' 0 likes';
 
-      heart.addEventListener('click', async (e, result) => {
+      heart.addEventListener('click', async (e) => {
         e.preventDefault();
         postLikes(
           'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/RgdNHGPFaR65qDly8eoG/likes/',
@@ -153,12 +159,6 @@ fetch('https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood')
             item_id: meal.id,
           },
         );
-        result = getLikes(
-          'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/RgdNHGPFaR65qDly8eoG/likes/',
-        );
-        result.then((data) => {
-          like.textContent = `${data[index].likes} likes`;
-        });
       });
 
       const likes1 = getLikes(
