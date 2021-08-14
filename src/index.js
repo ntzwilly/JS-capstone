@@ -5,6 +5,7 @@ import { getLikes, postLikes } from './involvement';
 import { getComments, getMeal } from './api';
 import { displayComments } from './comments';
 import { displayMeal, hideModal, displayModal } from './utils';
+import logoImage from './logo.png'
 
 const elementGenerator = (typeName, className) => {
   const element = document.createElement(typeName);
@@ -78,8 +79,8 @@ root.appendChild(formContainer);
 
 commentForm.addEventListener('submit', addNewComment);
 const header = elementGenerator('header');
-const logo = elementGenerator('div', 'logo');
-logo.textContent = 'Seafood logo';
+const logo = elementGenerator('img', 'logo');
+logo.src = logoImage;
 const navigation = elementGenerator('nav');
 const uList = elementGenerator('ul');
 const listOne = elementGenerator('li', 'spaceship');
