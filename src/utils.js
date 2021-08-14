@@ -15,11 +15,13 @@ export const displayMeal = (mealInfo) => {
   formContainer.querySelector('#title').innerHTML = mealInfo.strMeal;
   formContainer.querySelector('#description').innerHTML = mealInfo.strInstructions;
   ul.innerHTML = '';
-  ingredients.forEach((ing, index) => {
-    const li = document.createElement('li');
-    li.innerHTML = `${mealInfo[ing]}: ${mealInfo[measures[index]]}`;
-    ul.appendChild(li);
-  });
+  if (ingredients.length) {
+    ingredients.forEach((ing, index) => {
+      const li = document.createElement('li');
+      li.innerHTML = `${mealInfo[ing]}: ${mealInfo[measures[index]]}`;
+      ul.appendChild(li);
+    });
+  }
 };
 
 export const displayModal = () => {
