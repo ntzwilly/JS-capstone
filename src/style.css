@@ -48,7 +48,6 @@ header {
 }
 
 ul {
-  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   max-width: 60%;
@@ -116,6 +115,7 @@ h4 {
 .spaceship {
   text-decoration: underline;
   font-weight: bold;
+  font-size: 18px;
 }
 
 main {
@@ -211,4 +211,8 @@ footer {
 .formContainer input[type=text]:focus {
   background-color: #fff;
   outline: none;
+}
+
+.nav-font-size {
+  font-size: 18px;
 }

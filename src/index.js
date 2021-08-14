@@ -5,7 +5,7 @@ import { getLikes, postLikes } from './involvement';
 import { getComments, getMeal } from './api';
 import { displayComments } from './comments';
 import { displayMeal, hideModal, displayModal } from './utils';
-import logoImage from './logo.png'
+import logoImage from './logo.png';
 
 const elementGenerator = (typeName, className) => {
   const element = document.createElement(typeName);
@@ -97,12 +97,12 @@ async function mealCounter() {
 
 mealCounter();
 
-const listTwo = elementGenerator('li');
+const listTwo = elementGenerator('li', 'nav-font-size');
 const linkTwo = elementGenerator('a');
 linkTwo.href = '#';
 linkTwo.textContent = 'Planets';
 
-const listThree = elementGenerator('li');
+const listThree = elementGenerator('li', 'nav-font-size');
 const linkThree = elementGenerator('a');
 linkThree.href = '#';
 linkThree.textContent = 'Races';
@@ -148,13 +148,13 @@ fetch('https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood')
       heart.addEventListener('click', async (e, result) => {
         e.preventDefault();
         postLikes(
-          'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/FnxK1bSt3uMGTDmpjc4x/likes/',
+          'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/RgdNHGPFaR65qDly8eoG/likes/',
           {
             item_id: meal.id,
           },
         );
         result = getLikes(
-          'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/FnxK1bSt3uMGTDmpjc4x/likes/',
+          'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/RgdNHGPFaR65qDly8eoG/likes/',
         );
         result.then((data) => {
           like.textContent = `${data[index].likes} likes`;
@@ -162,7 +162,7 @@ fetch('https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood')
       });
 
       const likes1 = getLikes(
-        'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/FnxK1bSt3uMGTDmpjc4x/likes/',
+        'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/RgdNHGPFaR65qDly8eoG/likes/',
       );
 
       likes1.then((data) => {
