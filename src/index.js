@@ -159,6 +159,9 @@ fetch('https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood')
             item_id: meal.id,
           },
         );
+
+        const prevLikes = like.textContent.split(' ')[0];
+        like.innerHTML = `${parseInt(prevLikes, 10) + 1} likes`;
       });
 
       const likes1 = getLikes(
