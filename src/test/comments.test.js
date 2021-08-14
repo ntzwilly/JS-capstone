@@ -2,7 +2,7 @@ import getCommentsCount from '../utils';
 
 const mockComments = [
   {
-    item_id: '2',
+    item_id: 'txvcfrt',
     username: 'Mwimwi',
     comment: 'Some comment here',
   },
