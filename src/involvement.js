@@ -11,7 +11,7 @@ export async function postLikes(url = '', data = {}) {
     referrerPolicy: 'no-referrer',
     body: JSON.stringify(data),
   });
-  return response.json();
+  return response;
 }
 
 export async function getLikes(url = '') {
