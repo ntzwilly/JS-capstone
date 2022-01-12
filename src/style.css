@@ -1,0 +1,222 @@
+img {
+  height: 150px;
+  justify-items: center;
+}
+
+.fa-times {
+  height: 100px;
+}
+
+.formContainer {
+  position: fixed;
+  width: 500px;
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: auto;
+  padding: 20px;
+  background-color: rgb(231, 216, 216);
+  z-index: 999;
+  display: none;
+  align-items: center;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: large;
+  font-family: "Poppins", sans-serif;
+  background-color: rgb(231, 216, 216);
+  color: rgb(59, 91, 93);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw;
+  padding: 10px 250px;
+  position: fixed;
+  top: 0;
+  margin-bottom: 50px;
+  background-color: rgb(231, 216, 216);
+}
+
+ul {
+  justify-content: center;
+  align-items: center;
+  max-width: 60%;
+  text-align: center;
+}
+
+li {
+  width: 50%;
+  text-transform: capitalize;
+  font-size: 13px;
+}
+
+.formContainer img {
+  object-fit: cover;
+  width: 150px;
+  height: 150px;
+}
+
+.formContainer div:first-child {
+  margin: 0 auto;
+}
+
+.close-modal {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  cursor: pointer;
+}
+
+.like-counter img {
+  height: 25px;
+}
+
+.logo {
+  border: 2px solid rgb(59, 91, 93);
+  height: 80px;
+  width: 80px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  border-radius: 50%;
+}
+
+nav ul {
+  display: flex;
+  list-style-type: none;
+  margin-left: 10px;
+}
+
+nav ul li {
+  margin-left: 100px;
+}
+
+nav ul li a {
+  color: rgb(59, 91, 93);
+  text-decoration: none;
+}
+
+h1,
+h4 {
+  font-size: 1rem;
+  color: rgb(59, 91, 93);
+}
+
+.spaceship {
+  text-decoration: underline;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  margin-top: 150px;
+  margin-bottom: 60px;
+  background-color: rgb(231, 216, 216);
+}
+
+.image {
+  height: 200px;
+  width: 200px;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.likes {
+  display: flex;
+  flex-direction: row;
+  width: 200px;
+  justify-content: space-between;
+  padding: 20px 10px;
+}
+
+.descriptionText {
+  max-height: 50px;
+  overflow: hidden;
+  padding-bottom: 60px;
+  font-size: 15px;
+}
+
+.c-display {
+  font-size: 15px;
+}
+
+.submit-button {
+  margin-left: 0;
+}
+
+button {
+  margin-left: 20px;
+  margin-bottom: 30px;
+  padding: 10px 10px;
+  background-color: rgb(231, 216, 216);
+  border: 2px solid rgb(59, 91, 93);
+  box-shadow: 5px 5px 2px 1px rgb(59, 91, 93);
+  font-size: 0.8em;
+  cursor: pointer;
+  align-self: center;
+  color: rgb(59, 91, 93);
+}
+
+footer {
+  padding: 20px 100px;
+  border-top: 2px solid rgb(59, 91, 93);
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  background-color: rgb(231, 216, 216);
+  margin-top: 100px;
+}
+
+.font-size {
+  font-size: 16px;
+}
+
+.small {
+  font-size: 15px;
+}
+
+.like-counter {
+  text-align: center;
+}
+
+.width {
+  width: 71%;
+}
+
+.formContainer input[type="text"] {
+  width: 100%;
+  padding: 8px;
+  border: none;
+  background: #eee;
+}
+
+.formContainer input[type="text"]:focus {
+  background-color: #fff;
+  outline: none;
+}
+
+.nav-font-size {
+  font-size: 18px;
+}
+
+.card {
+  overflow-y: auto;
+}
